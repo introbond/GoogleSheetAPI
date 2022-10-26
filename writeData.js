@@ -2,7 +2,7 @@ var ss = SpreadsheetApp.openById('xxx')
 var sheet = ss.getSheetByName('xxx')
 
 function doPost(e) {
-    var action = e.parameter.action
+    let action = e.parameter.action
     if (action == 'writeData') {
         return writeData(e)
     }
