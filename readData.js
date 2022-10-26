@@ -1,5 +1,5 @@
-const ss = SpreadsheetApp.openById('xxx')
-const sheet = ss.getSheetByName('xxx')
+var ss = SpreadsheetApp.openById('1CgJf7BZUz9E6MqwrwWxmABN7EhNb6XF6OCjoscSNnV8')
+var sheet = ss.getSheetByName('API')
 
 function doGet(e) {
     let action = e.parameter.action
@@ -9,12 +9,11 @@ function doGet(e) {
 }
 
 function readData(e) {
-    let rows = sheet.getRange(2,1,sheet.getLastRow()-1,sheet.getLastColumn()).getValues()
-    let data =[]
-    let row = 0
-    let record = {}
+    const rows = sheet.getRange(2,1,sheet.getLastRow()-1,sheet.getLastColumn()).getValues()
+    const data = []
     for(let i = 0; i < rows.length; i++){
-        row = rows[i]
+        let row = rows[i]
+        let record = {}
         record['no']=row[0]
         record['name']=row[1]
         record['description']=row[2]
