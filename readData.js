@@ -3,7 +3,7 @@ const sheet = ss.getSheetByName('xxx')
 
 function doGet(e) {
     let action = e.parameter.action
-    if (action == 'getUsers') {
+    if (action == 'readData') {
         return readData(e)
       }
 }
